@@ -10,4 +10,3 @@
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
 Chinese::Application.config.secret_token = ENV['SECRET_TOKEN']
-Chinese::Application.config.secret_key_base = 'e66223d97ee1ddedd6352d35db639cbe80e8883697125ae09dfca3ea5dddee63d461a29846c5019f75608c368c73d05790fac40a332d11b2a9936a8c5d0fadf4'
