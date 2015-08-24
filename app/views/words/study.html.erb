@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="row">
+    <div class="content">
+      <h1><%= @word.native %></h1>
+      <%= button_to "Show answer", {:controller => "words", :action =>"show_answer", :word => @word}, :class => "btn btn-primary" %>
+    </div>
+  </div>
+</div>

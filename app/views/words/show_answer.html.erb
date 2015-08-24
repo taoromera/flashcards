@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="content">
+      <h1><%= @word.native %></h1>
+      <h1><%= @word.translit %></h1>
+      <h1><%= @word.translat %></h1>
+      <div class="col-sm-6">
+        <%= button_to "Knew it", {:controller => "words", :action => "knew", :word => @word}, :class => "btn btn-success" %>
+      </div>
+      <div class="col-sm-6">
+        <%= button_to "Missed it", {:controller => "words", :action => "missed", :word => @word}, :class => "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

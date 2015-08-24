@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="content">
+
+      <h1> Welcome to flashcards!</h1>
+
+      <% if current_user %>
+        <p>Cards due: <%= current_user.words.review.count %></p>
+        <% if current_user.words.next == nil %>
+          <p>No words to study</p>
+        <% else %>  
+          <%= button_to "Study", {:controller => "words", :action => "study"}, :class => "btn btn-info" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
