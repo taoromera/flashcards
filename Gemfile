@@ -5,6 +5,8 @@ ruby '2.0.0'
 # Spaced Repetition Manager
 gem 'okubo', :git => "git://github.com/rgravina/okubo.git"
 
+gem 'foreman'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~>4.0.0'
 
@@ -48,6 +50,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 gem 'unicorn'
+
+group :production, :staging do
+      gem 'rails_12factor'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
