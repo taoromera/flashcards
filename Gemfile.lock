@@ -107,7 +107,7 @@ GEM
     mime-types (2.6.1)
     minitest (4.7.5)
     multi_json (1.11.2)
-    mysql2 (0.3.19)
+    pg (0.18.2)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     rack (1.5.5)
@@ -185,8 +185,8 @@ DEPENDENCIES
   foreman
   jbuilder (~> 1.2)
   jquery-rails
-  mysql2
   okubo!
+  pg
   rails (~> 4.0.0)
   rails_12factor
   sass-rails (~> 4.0.2)
