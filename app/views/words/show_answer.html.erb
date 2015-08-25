@@ -2,13 +2,14 @@
   <div class="row">
     <div class="content">
       <h1><%= @word.native %></h1>
-      <h1><%= @word.translit %></h1>
-      <h1><%= @word.translat %></h1>
+      <h3><%= @word.translit %></h3>
+      <h3><%= @word.translat %></h3>
+      <h1></h1>
       <div class="col-sm-6">
-        <%= button_to "Knew it", {:controller => "words", :action => "knew", :word => @word}, :class => "btn btn-success" %>
+        <%= link_to "Knew it", {:controller => "words", :action => "knew", :word => @word}, :class => "btn-success-xl", :style => "text-decoration: none; color: #FFF", method: :post %>
       </div>
       <div class="col-sm-6">
-        <%= button_to "Missed it", {:controller => "words", :action => "missed", :word => @word}, :class => "btn btn-danger" %>
+        <%= link_to "Missed it", {:controller => "words", :action => "missed", :word => @word}, :class => "btn-danger-xl", :style => "text-decoration: none; color: #FFF", method: :post  %>
       </div>
     </div>
   </div>

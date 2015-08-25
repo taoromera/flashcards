@@ -9,7 +9,7 @@
         <% if current_user.words.next == nil %>
           <p>No words to study</p>
         <% else %>  
-          <%= button_to "Study", {:controller => "words", :action => "study"}, :class => "btn btn-info" %>
+          <%= link_to "Study", {:controller => "words", :action => "study"}, :class => "btn-primary-xl", :style => "text-decoration: none; color: #FFF", method: :post %>
         <% end %>
       <% end %>
     </div>
