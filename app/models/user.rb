@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
   has_deck :words
+  has_many :words
   
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

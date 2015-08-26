@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 
   # Add new words in the DB to the user study deck
   def add_new_words(user)
-    Word.all.each do |w| 
+    Word.where(user_id: user.id).each do |w| 
       if !user.words.include?(w)
         user.words << w
       end
