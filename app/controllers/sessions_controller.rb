@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
+      clear_del_words(user)
       add_new_words(user)
       redirect_to root_url, :notice => "Logged in!"
     else
@@ -25,6 +26,17 @@ class SessionsController < ApplicationController
     Word.where(user_id: user.id).each do |w| 
       if !user.words.include?(w)
         user.words << w
+      end
+    end
+  end
+
+  # Clear deleted words in the DB from the user study deck
+  def clear_del_words(user)
+    ids = user.words.items.pluck("id")
+    ids.each do |i|
+      if Word.where(user_id: user.id).where(id: i).blank?
+        puts "deleting " + i 
+        user.words.items.find(i).delete
       end
     end
   end
