@@ -4,6 +4,8 @@ ActiveAdmin.register Word do
   filter :native
   filter :translit
   filter :translat
+  filter :sentence, as: :string
+  filter :sent_trans, as: :string
 
   form do |f|
     f.inputs do
@@ -11,6 +13,8 @@ ActiveAdmin.register Word do
       f.input :native
       f.input :translit
       f.input :translat
+      f.input :sentence
+      f.input :sent_trans
     end
     f.actions
   end
@@ -20,6 +24,8 @@ ActiveAdmin.register Word do
 	row :native
 	row :translit
 	row :translat
+	row :sentence
+	row :sent_trans
     end
   end
 
