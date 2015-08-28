@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="content">
-      <h1><%= @word.native %></h1>
-      <h3><%= @word.translit %></h3>
-      <h3><%= @word.translat %></h3>
-      <h3 style="color: grey"><%= @word.sentence %></h3>
-      <h3 style="color: grey"><%= @word.sent_trans %></h3>
+      <h1><%= @word.native.html_safe %></h1>
+      <h3><%= @word.translit.html_safe %></h3>
+      <h3><%= @word.translat.html_safe %></h3>
+      <h3 style="color: grey"><%= @word.sentence.html_safe %></h3>
+      <h3 style="color: grey"><%= @word.sent_trans.html_safe %></h3>
       <h1></h1>
       <div class="col-sm-6">
         <%= link_to "Knew it", {:controller => "words", :action => "knew", :word => @word}, :class => "btn-success-xl", :style => "text-decoration: none; color: #FFF", method: :post %>
