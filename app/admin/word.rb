@@ -4,8 +4,8 @@ ActiveAdmin.register Word do
   filter :native
   filter :translit
   filter :translat
-  filter :sentence, as: :string
-  filter :sent_trans, as: :string
+  filter :sentence
+  filter :sent_trans
 
   form do |f|
     f.inputs do
