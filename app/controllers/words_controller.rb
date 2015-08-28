@@ -14,9 +14,7 @@ class WordsController < ApplicationController
 
   def show_answer
     @word = Word.find(params[:word])
-    @word.each do |f|
-      f.nil? ? f = "" : 0
-    end
+    @word.attributes.each do {|a| a.nil? ? a = "" : 0}
   end
 
   def knew
