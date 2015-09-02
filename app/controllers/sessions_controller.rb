@@ -35,7 +35,7 @@ class SessionsController < ApplicationController
     ids = user.words.items.pluck("id")
     ids.each do |i|
       if Word.where(user_id: user.id).where(id: i).blank?
-        puts "deleting " + i 
+        puts "deleting " + i.to_s 
         user.words.items.find(i).delete
       end
     end
